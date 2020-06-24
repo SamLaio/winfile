@@ -1,0 +1,91 @@
+
+// Suggestion database info
+// Used to automate the suggestions compiled into winfile
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+//
+// Usage: Just add a new entry of the format:
+
+// SUGGEST( resource_number, error-code, flags, "your-reason-string" )
+//  resource_number = incremental number for string ID
+//  error-code = error this suggestion corresponds to
+//  "your-reason-string" string displayed for error
+//  flags: SUG_IGN_FORMATMESSAGE = prepend system FormatMessage text
+
+// Ok, so it's not perfect: your resource number can't clash
+// with any others in winfile.h.  Use 1 .. 99 (1101 to 1199)
+// resource # 0 is reserved.
+
+// What it does:
+// For system errors (defined here in winfile land as < DE_BEGIN (bit 29 off)),
+// it puts the "suggestion" below the error text (a blank line is between
+// them.
+//
+// For our errors (>= DE_BEGIN), it places the text below (1 blank line)
+// the previous string.  There is no longer any corresponding text called
+// "IDS_REASONS+DE_MYERROR" or "DE_MYERROR" in the resources.
+// Internal error messages and their reasons must be stored here in
+// the same string.
+
+#ifndef IDS_SUGGESTBEGIN
+#define IDS_SUGGESTBEGIN 1100
+#endif
+
+SUGGEST( 1, DE_SAMEFILE, 0L, \
+ "來源和目標相同。" )
+SUGGEST( 2, DE_MANYSRC1DEST, 0L, \
+ "僅選擇一個文件更名，或使用萬用字元（例如 *.TXT）為一組具有類似名稱的文件更名。" )
+SUGGEST( 3, DE_DIFFDIR, 0L, \
+ "無法重命名為不同的目錄或硬碟。\n請改用「文件移動」命令。" )
+SUGGEST( 4, DE_ROOTDIR, 0L, \
+ "無法為根目錄重命名。" )
+SUGGEST( 5, DE_DESTSUBTREE, 0L, \
+ "目標目錄為來源的子目錄。" )
+SUGGEST( 6, DE_WINDOWSFILE, 0L, \
+ "Windows 正在使用文件。" )
+SUGGEST( 7, DE_MANYDEST, 0L, \
+ "「到」框中僅指定一個文件或目錄。若要指定一組文件，請使用萬用字元（例如 *.TXT）。" )
+SUGGEST( 8, DE_RENAMREPLACE, 0L, \
+ "已經有使用這個名稱的文件或目錄存在。在目錄中，文件和目錄的名稱都必需是唯一的。" )
+
+// This error is returned when selecting a grayed network drive and the rdr is not started
+SUGGEST( 9, ERROR_FILE_NOT_FOUND, 0L, \
+ "請確認是否指定正確的路徑和文件名。" )
+SUGGEST(10, ERROR_PATH_NOT_FOUND, 0L, \
+ "請確認是否指定正確的路徑。" )
+SUGGEST(11, ERROR_NOT_ENOUGH_MEMORY, 0L, \
+ "請結束一或數個應用程式，然後再試。或使用控制面板的「系统」選項，增加虛擬記憶體。" )
+// 12
+SUGGEST(13, ERROR_WRITE_PROTECT, 0L, \
+ "取消此硬碟的寫保護或使用另一硬碟，然後再試一次。" )
+SUGGEST(14, ERROR_NETWORK_ACCESS_DENIED, 0L, \
+ "請確定您擁有正確的網路授權以便運行此項操作。" )
+SUGGEST(15, ERROR_DISK_FULL, 0L, \
+  "請刪除一個或數個文件以增加硬碟空間，然後再試一次。" )
+SUGGEST(16, ERROR_NO_DATA_DETECTED, SUG_IGN_FORMATMESSAGE, \
+  "在此媒體上未偵測到任資料。" )
+
+SUGGEST(17, DE_MAKEDIREXISTS, 0L, \
+  "目錄已經存在。" )
+SUGGEST(18, DE_DIREXISTSASFILE, 0L, \
+  "指定的名稱已由另一個文件所使用。" )
+#ifdef ASSOC
+SUGGEST(19, DE_DELEXTWRONGMODE, 0L, \
+  "This can only be deleted when viewing Common File Types and extensions." )
+#endif
+
+// Block out errors that require arguments
+SUGGEST(50, ERROR_WRONG_DISK, SUG_IGN_FORMATMESSAGE, \
+  "驅動器中的軟碟不對。" )
+SUGGEST(51, ERROR_CHILD_NOT_COMPLETE, SUG_IGN_FORMATMESSAGE, \
+  "應用程式無法在 Windows NT 方式下運行。" )
+SUGGEST(52, ERROR_INVALID_ORDINAL, SUG_IGN_FORMATMESSAGE, \
+  "操作系统無法運行此組件。" )
+SUGGEST(53, ERROR_INVALID_EXE_SIGNATURE, SUG_IGN_FORMATMESSAGE, \
+  "此組件無法在 Windows NT 方式下運行。" )
+SUGGEST(54, ERROR_BAD_EXE_FORMAT, SUG_IGN_FORMATMESSAGE, \
+  "此程式並非有效的 Windows NT 應用程式。" )
+SUGGEST(55, ERROR_MR_MID_NOT_FOUND, SUG_IGN_FORMATMESSAGE, \
+  "出錯。沒有任何關于此錯誤的提示。" )
+

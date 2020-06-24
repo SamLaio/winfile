@@ -1,0 +1,613 @@
+/********************************************************************
+
+   res_zh-TW.rc
+
+   Copyright (c) Microsoft Corporation. All rights reserved.
+   Licensed under the MIT License.
+
+********************************************************************/
+
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+
+FRAMEMENU MENU PRELOAD
+BEGIN
+    POPUP       "檔案(&F)"
+    BEGIN
+    MENUITEM    "開啟(&O)\tEnter",     IDM_OPEN
+    MENUITEM    "編輯\tF12",	    IDM_EDIT
+    MENUITEM    "移到(&M)...\tF7",     IDM_MOVE
+    MENUITEM    "複製(&C)...\tF8",     IDM_COPY
+    MENUITEM    "複製到剪貼簿(&B)...\tCtrl+C", IDM_COPYTOCLIPBOARD
+	MENUITEM    "剪下到剪貼簿\tCtrl+X", IDM_CUTTOCLIPBOARD
+    MENUITEM	"貼上(&P)\tCtrl+V", 	IDM_PASTE
+    MENUITEM    "刪除(&D)...\tDel",  IDM_DELETE
+    MENUITEM    "重新命名(&N)...",   IDM_RENAME
+    MENUITEM    "屬性(&T)...\tAlt+Enter",IDM_ATTRIBS
+    MENUITEM    SEPARATOR
+    MENUITEM    "壓縮(&S)...",     IDM_COMPRESS
+    MENUITEM    "解壓縮(&U)...",   IDM_UNCOMPRESS
+    MENUITEM    SEPARATOR
+    MENUITEM    "執行(&R)...",          IDM_RUN
+    MENUITEM    "列印(&P)...",        IDM_PRINT
+    MENUITEM    "關聯(&A)...",    IDM_ASSOCIATE
+    MENUITEM    SEPARATOR
+    MENUITEM    "建立目錄(&E)...\tCtrl+Shift+N", IDM_MAKEDIR
+    MENUITEM    "搜索(&H)...\tCtrl+F",       IDM_SEARCH
+    MENUITEM    "選擇(&F)...", IDM_SELECT
+	MENUITEM    "開啟 Bash...", IDM_STARTBASHSHELL
+	MENUITEM    "開啟 Command line(&L)...", IDM_STARTCMDSHELL
+    MENUITEM    "開啟 PowerShell(&W)...", IDM_STARTPOWERSHELL
+	MENUITEM    "快速移至目錄(&G)...\tCtrl+G", IDM_GOTODIR
+    MENUITEM    SEPARATOR
+    MENUITEM    "關閉(&X)",            IDM_EXIT
+    END
+    POPUP       "硬碟(&D)"
+    BEGIN
+    MENUITEM    "複製硬碟(&C)...",    IDM_DISKCOPY
+    MENUITEM    "設置硬碟代號(&L)...",   IDM_LABEL
+    MENUITEM    SEPARATOR
+    MENUITEM    "格式化硬碟(&F)...",  IDM_FORMAT
+    MENUITEM    SEPARATOR
+    MENUITEM    "選擇該位置(&S)...", IDM_DRIVESMORE
+    END
+    POPUP       "目錄樹(&T)"
+    BEGIN
+    MENUITEM    "展開一層(&X)\t+", IDM_EXPONE
+    MENUITEM    "展開分支(&B)\t*",    IDM_EXPSUB
+    MENUITEM    "展開全部(&A)\tCtrl+*",  IDM_EXPALL
+    MENUITEM    "折疊分支(&C)\t-",  IDM_COLLAPSE
+    MENUITEM    SEPARATOR
+    MENUITEM    "標記可展開的分支(&I)",    IDM_ADDPLUSES
+    END
+    POPUP       "查看(&V)"
+    BEGIN
+    MENUITEM    "目錄樹與目錄(&R)",  IDM_BOTH
+    MENUITEM    "目錄樹(&E)",           IDM_TREEONLY
+    MENUITEM    "目錄(&O)",      IDM_DIRONLY
+    MENUITEM    SEPARATOR
+    MENUITEM    "拆分(&L)",               IDM_SPLIT
+    MENUITEM    SEPARATOR
+    MENUITEM    "名稱(&N)",                IDM_VNAME
+    MENUITEM    "文件的全部詳细資訊(&A)",    IDM_VDETAILS,   CHECKED
+    MENUITEM    "部分詳细資訊(&P)...",  IDM_VOTHER
+    MENUITEM    SEPARATOR
+    MENUITEM    "按名稱排序(&S)",   IDM_BYNAME
+    MENUITEM    "按類型排序(&B)",   IDM_BYTYPE
+    MENUITEM    "按大小排序(&Z)",   IDM_BYSIZE
+    MENUITEM    "按日期排序(&D)",   IDM_BYDATE
+    MENUITEM    "按先前日期排序(&F)",   IDM_BYFDATE
+    MENUITEM    SEPARATOR
+    MENUITEM    "按文件類型(&T)...",     IDM_VINCLUDE
+    END
+    POPUP       "選項(&O)"
+    BEGIN
+    MENUITEM    "確認(&C)...",     IDM_CONFIRM
+    MENUITEM    "字體(&F)...",             IDM_FONT
+    MENUITEM    "自定義工具欄(&B)...", IDM_TOOLBARCUST
+    MENUITEM    "首選項(&P)", IDM_PREF
+    MENUITEM    SEPARATOR
+    MENUITEM    "工具欄(&T)",                 IDM_TOOLBAR
+    MENUITEM    "該位置欄(&D)",                IDM_DRIVEBAR
+    MENUITEM    "狀態欄(&S)",              IDM_STATUSBAR
+    MENUITEM    SEPARATOR
+    MENUITEM    "自動產生縮圖(&M)",     IDM_MINONRUN
+    MENUITEM    "在執行時建立“快速移至目錄“索引(&G)", IDM_INDEXONLAUNCH
+    MENUITEM    "關閉時保存設置值(&E)",   IDM_SAVESETTINGS
+#ifdef PROGMAN
+    MENUITEM    SEPARATOR
+    MENUITEM    "Save Settings &Now",       IDM_SAVENOW
+#endif
+    END
+    POPUP       "安全(&S)"
+    BEGIN
+    MENUITEM    "權限(&P)...",  IDM_PERMISSIONS
+    MENUITEM    "審核(&A)...",     IDM_AUDITING
+    MENUITEM    "所有者(&O)...",        IDM_OWNER
+    END
+    POPUP       "窗口(&W)"
+    BEGIN
+    MENUITEM    "新建窗口(&N)",          IDM_NEWWINDOW
+    MENUITEM    "層疊(&C)\tShift+F5",   IDM_CASCADE
+    MENUITEM    "水平平鋪(&H)",   IDM_TILEHORIZONTALLY
+    MENUITEM    "垂直平鋪(&T)\tShift+F4",      IDM_TILE
+    MENUITEM    "排列圖示(&A)",       IDM_ARRANGE
+    MENUITEM    "刷新(&R)\tF5",         IDM_REFRESH
+    END
+    POPUP       "幫助(&H)"
+    BEGIN
+    MENUITEM    "目錄(&C)",                IDM_HELPINDEX
+    MENUITEM    "查找幫助主题(&S)...",   IDM_HELPKEYS
+    MENUITEM    "幫助使用方法(&H)",         IDM_HELPHELP
+    MENUITEM    SEPARATOR
+    MENUITEM    "關於文件管理器(&A)...",   IDM_ABOUT
+    END
+
+END
+
+CTXMENU MENU PRELOAD 
+BEGIN
+	POPUP "Dummy Popup"
+	BEGIN
+	MENUITEM    "新建窗口(&N)\t選中",     IDM_NEWWINDOW
+    MENUITEM    "開啟(&O)\tEnter",     IDM_OPEN
+    MENUITEM    "編輯\tF12",	    IDM_EDIT
+    MENUITEM    "移到(&M)...\tF7",     IDM_MOVE
+    MENUITEM    "複製(&C)...\tF8",     IDM_COPY
+	MENUITEM    "複製到剪貼簿(&B)\tCtrl+C", IDM_COPYTOCLIPBOARD
+	MENUITEM    "剪下到剪貼簿\tCtrl+X", IDM_CUTTOCLIPBOARD
+	MENUITEM	"貼上(&P)\tCtrl+V", IDM_PASTE
+	MENUITEM    "刪除(&D)...\tDel",  IDM_DELETE
+    MENUITEM    "重新命名(&N)...\tF2",   IDM_RENAME
+    MENUITEM    "屬性(&T)...\tAlt+Enter",IDM_ATTRIBS
+    MENUITEM    "執行(&R)...",          IDM_RUN
+    MENUITEM    "開啟 Bash...", IDM_STARTBASHSHELL
+	MENUITEM    "開啟命令提示符(&L)...", IDM_STARTCMDSHELL
+	MENUITEM    "開啟 PowerShell(&W)...", IDM_STARTPOWERSHELL
+	MENUITEM    "快速移至目錄(&G)...", IDM_GOTODIR
+	END
+END
+
+
+#define SUGGEST(id,err,flags,str) id+IDS_SUGGESTBEGIN str
+/*              0....5....1....56...2....5....3.2..5....4....5....5....6....5....7....5....8....5....9....5....0....5....1....5....2....5..8 */
+STRINGTABLE DISCARDABLE PRELOAD
+BEGIN
+//    IDS_ENDSESSION          "Exit Windows"                  /* 32 */
+//    IDS_ENDSESSIONMSG       "This will end your Windows session."                                                                                      /* 128 */
+
+    IDS_COPYDISK            "複製硬碟"                     /* 32 */
+    IDS_INSERTDEST          "選擇目標。"                                                                                                 /* 128 */
+    IDS_INSERTSRC           "選擇來源。"                                                                                                      /* 128 */
+    IDS_INSERTSRCDEST       "選擇來源及目標。"                                                                                     /* 128 */
+    IDS_FORMATTINGDEST      "格式化目標"                                                                                             /* 128 */
+
+    IDS_COPYDISKERR         "複製硬碟錯誤"               /* 32 */
+    IDS_COPYDISKERRMSG      "無法複製硬碟。"                                                                                                     /* 128 */
+    IDS_COPYSRCDESTINCOMPAT "來源與目標不相容。"                                                                          /* 128 */
+
+    IDS_PERCENTCOMP         "完成了%d%%"                /* 32 */
+    IDS_CREATEROOT          "正在建立根目錄..."       /* 32 */
+    IDS_COPYSYSFILES        "正在複製系統文件..."          /* 32 */
+    IDS_FORMATERR           "格式化硬碟錯誤"             /* 32 */
+    IDS_FORMATQUICKFAILURE  "文件管理器無法進行快速格式化。\n\n執行正常格式化？"
+//    IDS_FORMATERRMSG        "Cannot format disk."                                                                                                      /* 128 */
+//    IDS_FORMATCURERR      "You cannot format the current drive."                                                                                     /* 128 */
+    IDS_FORMATCOMPLETE      "格式化完成"               /* 32 */
+    IDS_FORMATANOTHER       "全部硬碟空間 %ld bytes\n硬碟上還有%ld bytes可用\n\n您想格式化另一個硬碟嗎？"                           /* 128 */
+
+//    IDS_SYSDISK             "Make System Disk"
+//    IDS_SYSDISKRUSURE       "Are you sure you want to copy system files onto the disk in drive %c?"
+//    IDS_SYSDISKERR          "System Disk Error"
+//    IDS_SYSDISKNOFILES      "The MS-DOS startup drive does not contain system files or is not available."
+//    IDS_SYSDISKSAMEDRIVE    "Cannot copy system files to the MS-DOS startup drive."
+//    IDS_SYSDISKADDERR       "Cannot add system files to this disk.\n\nMake sure a formatted disk is present in the drive and that the drive door is closed."
+
+    IDS_NETERR              "網路錯誤"                 /* 32 */
+    IDS_NETDISCONWINERR     "該位置包含 Windows 系統文件，無法被斷開。"                                                 /* 128 */
+    IDS_NETDISCONOPEN       "文件管理器無法切斷網路該位置的連接。\n\n在此該位置上開啟了數個文件。"
+
+    IDS_ATTRIBERR           "文件管理器無法更改屬性。"
+    IDS_MAKEDIRERR          "文件管理器無法建立目錄。"
+
+    IDS_LABELDISKERR        "文件管理器無法為軟碟命名。\n\n請確認軟碟未作寫保護、並非網路該位置，而且輸入正確的名稱。\n名稱不可包含下列字元: \n[空格] * ? / \\ | . , ; : + = [ ] ( ) & ^ < > "" "
+
+	IDS_SEARCHNOMATCHES     "未找到相符的文件。"
+    IDS_SEARCHREFRESH       "這個該位置的内容已有變化。您想更新“搜索结果“嗎？"
+    IDS_LABELACCESSDENIED   "您必需以管理員身份登錄此工作站，以便在硬碟上執行此項操作。"
+
+    IDS_DRIVETEMP           "該位置 %c:%c"
+
+    IDS_EXECERRTITLE,       "無法執行程式"
+    IDS_PRINTERRTITLE,      "無法列印文件"
+
+    IDS_UNKNOWNMSG,         "意外錯誤: %d。"
+    IDS_NOMEMORYMSG,        "沒有足夠的記憶體可執行指定的應用程式。\n\n請關閉一至數個應用程式，然後再試。"                   /* 128 */
+    IDS_FILENOTFOUNDMSG,    "文件管理器無法找到文件（或其组件）。\n\n請確定路徑和文件名都是正確的，且所有必要的函式庫都是可用的。"
+    IDS_BADPATHMSG,         "指定的路徑無效。"                                                                                           /* 128 */
+//    IDS_MANYOPENFILESMSG,   "Too many files are currently in use.\n\nQuit one or more applications or increase the value of the FILES command in CONFIG.SYS, and then try again."                                    /* 128 */
+    IDS_NOASSOCMSG,         "沒有應用程式與此文件關聯。\n\n請从“文件“選單中選擇“關聯“以建立關聯。"       /* 128 */
+    IDS_ASSOCINCOMPLETE,    "文件管理器無法開啟或列印文件。\n\n請執行用以建立此文件的應用程式，並開啟或列印該文件。"
+//    IDS_MULTIPLEDSMSG,      "Cannot start more than one copy of the specified program."                                                                /* 128 */
+//    IDS_OS2APPMSG           "The specified application is not a Windows or MS-DOS program."                                                            /* 128 */
+//    IDS_NEWWINDOWSMSG       "This application requires a newer version of Microsoft Windows."                                                          /* 128 */
+//    IDS_PMODEONLYMSG        "This application requires Windows."                                                             /* 128 */
+    IDS_DDEFAIL             "在將命令發送到應用程式時發生錯誤。"                                                                /* 128 */
+//    IDS_COMPRESSEDEXE       "This program or one of its components is compressed.\n\nUse the MS-DOS expand utility to copy the file from the setup disks."
+    IDS_INVALIDDLL          "執行該應用程式所需的函式庫文件之一損壞。請重新安裝該應用程式。"
+    IDS_SHAREERROR          "此文件正被其它應用程式使用。"
+
+    IDS_CREATELONGDIR       "文件管理器無法訪問在“%s“目錄中所建立的文件。\n\n是否繼續？"
+    IDS_CREATELONGDIRTITLE  "建立目錄"
+
+    IDS_MOUSECONFIRM,       "確認滑鼠操作"       /* 32 */
+    IDS_COPYMOUSECONFIRM,   "確定把所選文件或目錄複製到 %s ？"
+    IDS_MOVEMOUSECONFIRM,   "確定把所選文件或目錄移到到 %s ？"
+    IDS_EXECMOUSECONFIRM,   "確定要使用 %s 開啟 %s ？"                                                          /* 128 */
+
+    IDS_WINFILE,            "文件管理器"                  /* 32 */
+    IDS_TREETITLE,          "目錄樹"                /* 32 */
+    IDS_SEARCHTITLE,        "搜索结果:"              /* 32 */
+
+    IDS_READING             "正在讀取目錄，請稍候..."
+    IDS_TOOMANYTITLE,       "文件過多"                /* 32 */
+    IDS_OOMTITLE,           "文件管理器 - 記憶體用盡"  /* 32 */
+    IDS_OOMREADINGDIRMSG,   "無法讀取整個目錄。僅顯示部分列表。"                                              /* 128 */
+
+//    IDS_PRINTFNF            "The file to be printed cannot be found. Make sure the correct path and filename are specified."                                                                                  /* 128 */
+    IDS_PRINTMEMORY         "沒有足夠的記憶體空間可供列印。\n\n請關閉一些應用程式，然後重試。"                                             /* 128 */
+    IDS_PRINTDISK           "沒有足夠的硬碟空間可供列印。\n\n請刪除一些文件以釋放硬碟空間，然後重試。"                        /* 128 */
+    IDS_PRINTERROR          "列印時出現錯誤。\n\n請確認選擇了正確的列印機，並檢查列印機配置是否正確。"             /* 128 */
+    IDS_PRINTONLYONE        "文件管理器無法同時列印多份文件。\n\n只選擇一份文件，然後重試。"                                               /* 128 */
+
+    IDS_CURDIRIS,           "當前目錄: %s"                                                                                                    /* 128 */
+    IDS_COPY,               "複製"                          /* 32 */
+    IDS_RENAME,             "重新命名"                        /* 32 */
+    IDS_FORMAT,             "格式化硬碟"                   /* 32 */
+    IDS_FORMATSELDISK,      "選擇要格式化的硬碟。"
+
+//    IDS_MAKESYSDISK,      "Make System Disk"              /* 32 */
+
+    IDS_CREATINGMSG,        "建立:"                     /* 32 */
+    IDS_REMOVINGDIRMSG,     "正在刪除:"                     /* 32 */
+    IDS_REMOVINGMSG,        "正在刪除..."                   /* 32 */
+    IDS_COPYINGMSG,         "正在複製:"                      /* 32 */
+    IDS_OPENINGMSG,         "正在開啟..."                    /* 32 */
+    IDS_CLOSINGMSG,         "正在關閉..."                    /* 32 */
+    IDS_RENAMINGMSG,        "正在重新命名..."                   /* 32 */
+    IDS_MOVINGMSG,          "正在移到..."                     /* 32 */
+    IDS_DELETINGMSG,        "正在刪除..."                   /* 32 */
+    IDS_PRINTINGMSG,        "正在列印: %s"                  /* 32 */
+
+//    IDS_NOSUCHDRIVE,        "Drive %c does not exist."                                                                                            /* 128 */
+    IDS_DRIVENOTREADY,      "請將硬碟插入該位置 %c:"
+    IDS_UNFORMATTED,        "該位置 %c 中的硬碟未被格式化。\n\n想現在格式化嗎？"
+
+    IDS_STATUSMSG,          "共 %d 個文件 (%s)"             /* 128 */
+    IDS_STATUSMSG2,         "選擇了 %d 個文件 (%s)"          /* 128 */
+    IDS_DRIVEFREE,          "%c: %s 可用空間，%s 全部空間"            /* 128 */
+    IDS_TREEABORT,          "目錄樹未完整顯示"     /* 128 */
+    IDS_DIRSREAD,           "目錄讀取: %d"                   /* 32 */
+    IDS_SEARCHMSG,          "找到 %d 個文件"
+    IDS_BYTES,              "%ld bytes"
+    IDS_SBYTES,             "%s bytes"
+
+    IDS_SELECTEDFILES,      "所選文件"            /* 32 */
+
+    /* These strings are used for generating error messages
+     * from the Copy, Move, and Delete code. */
+
+    IDS_COPYERROR + FUNC_COPY   "複製文件出錯"
+    IDS_COPYERROR + FUNC_MOVE   "移到文件出錯"
+    IDS_COPYERROR + FUNC_DELETE "刪除文件出錯"
+    IDS_COPYERROR + FUNC_RENAME "重新命名文件出錯"
+    IDS_COPYERROR + FUNC_SETDRIVE "選擇該位置出錯"
+    IDS_COPYERROR + FUNC_EXPAND   "讀取目錄出錯"
+    IDS_COPYERROR + FUNC_LABEL    "設置硬碟代號出錯"
+
+    /* The first %s is replaced by a file name. The second %s is replaced
+     * by one of the "reasons" below. */
+
+    IDS_VERBS + FUNC_COPY       "文件管理器無法複製 %s: %s"
+    IDS_VERBS + FUNC_MOVE       "文件管理器無法移到 %s: %s"
+    IDS_VERBS + FUNC_DELETE     "文件管理器無法刪除 %s: %s"
+    IDS_VERBS + FUNC_RENAME     "文件管理器無法重新命名 %s: %s"
+    IDS_ACTIONS + 1             "文件管理器無法建立目錄 %s: %s"
+    IDS_ACTIONS + 2             "文件管理器無法刪除目錄 %s: %s"
+    IDS_REPLACING               "文件管理器無法建立或替換 %s: %s"
+    // IDS_CREATING             "File Manager cannot create %s: %s"
+
+// include reason strings
+
+#include "suggest_zh-TW.db"
+
+    IDS_DESTFULL                "目標軟碟已滿。請插入另一軟碟以繼續。"
+    IDS_WRITEPROTECTFILE        "這是一個系統、隱藏或唯讀文件。"
+
+    IDS_COPYINGTITLE            "正在複製..."
+
+    IDS_QUICKFORMATTINGTITLE    "快速格式化..."
+
+    IDS_BUSYFORMATQUITVERIFY    "文件管理器正在格式化軟碟。關閉文件管理器將會中斷該操作。"
+    IDS_BUSYCOPYQUITVERIFY      "文件管理器正在複製軟碟。關閉文件管理器將會中斷該操作。"
+    IDS_PERCENTCOMPLETE         "完成百分比"
+    IDS_FORMATSELECTDLGTITLE    "格式化硬碟"
+
+    IDS_12MB                    "1%s2 MB"
+    IDS_360KB                   "360K"
+    IDS_144MB                   "1%s44 MB"
+    IDS_720KB                   "720K"
+    IDS_288MB                   "2%s88 MB"
+    IDS_2080MB                  "20%s8 MB"
+
+#if defined(JAPAN) && defined(i386)
+/* ADD KBNES. NEC MEDIATYPE START */
+JAPANBEGIN
+    IDS_125MB                   "1%s25 MB"
+    IDS_256KB                   "256K"
+    IDS_128MB                   "128 MB"
+JAPANEND
+/* ADD KBNES. NEC MEDIATYPE END */
+
+//
+// FMR jul.21.1994 JY
+// We added 640KB/1.23MB media types.
+//
+JAPANBEGIN
+    IDS_640KB                   "640K"
+    IDS_123MB                   "1%s23 MB"
+JAPANEND
+#endif
+
+    IDS_DEVICECAP               "該位置容量"
+    IDS_QSUPMEDIA               "文件管理器無法取得軟碟資訊。\n\n請確定軟碟位於該位置中。"
+    IDS_REMOVEMED               "未知的硬碟類型"
+
+    IDS_CANTFORMATTITLE         "未知的硬碟類型"
+    IDS_CANTFORMAT              "文件管理器無法格式化該位置 %s 中的硬碟類型。請使用硬碟管理器來格式化這個硬碟。"
+
+    IDS_FFERR_INCFS             "不相容的文件系統。"
+    IDS_FFERR_ACCESSDENIED      "禁止訪問。"
+    IDS_FFERR_DISKWP            "硬碟寫保護。"
+    IDS_FFERR_CANTLOCK          "文件管理器無法鎖定硬碟。"
+    IDS_FFERR_CANTQUICKF        "文件管理器無法快速格式化軟碟。\n\n請確定軟碟的密度是正確的。"
+    IDS_FFERR_SRCIOERR          "源軟碟上的 IO 錯誤。"
+    IDS_FFERR_DSTIOERR          "目標軟碟上的 IO 錯誤。"
+    IDS_FFERR_SRCDSTIOERR       "源軟碟和目標軟碟上的 IO 錯誤。"
+    IDS_FFERR_GENIOERR          "發生 IO 錯誤。"
+//    IDS_FFERR_MEDIASENSE      "This disk is capable of being formatted at a capacity of %s. Continue formatting at this capacity?"
+    IDS_FFERR                   "文件管理器無法格式化軟碟。\n\n請確定軟碟位於該位置内，且未寫保護、損壞或密度錯誤。"
+    IDS_FFERR_BADLABEL          "文件管理器無法為該位置命名。\n\n指定的硬碟代號無效。請確認代號沒有下列字元\n\n[空格] * ? / \\ | . , ; : + = [ ] ( ) & ^ < > "" "
+
+
+    IDS_FORMATCONFIRM           "格式化會清除軟碟中的所有資料。確定格式化 %c 該位置内的軟碟？"
+    IDS_FORMATCONFIRMTITLE      "確認格式化硬碟"
+
+    IDS_DISKCOPYCONFIRM         "此操作將清除目標碟上的所有資料。繼續？"
+    IDS_DISKCOPYCONFIRMTITLE    "確定複製硬碟"
+    IDS_ANDCLOSE                "關閉(&C)"        // goes on Selection dialog
+    IDS_CLOSE                   "關閉"         // braindead "&Change"
+    IDS_PATHNOTTHERE            "%s 目錄並不存在。\n\n是否建立該目錄？"
+    IDS_PROGRAMS                "程式 (*.exe;*.pif;*.com;*.bat)#*.exe;*.pif;*.com;*.bat#所有文件 (*.*)#*.*#"
+
+    IDS_MENUANDITEM             "%s - %s"
+    IDS_DRIVELABEL              "該位置:"
+    IDS_STATUSMSGSINGLE         "%s, "
+
+    IDS_CONNECTHELP             "連接到網路該位置"
+    IDS_DISCONHELP              "斷開網路該位置"
+    IDS_CONNECTIONHELP          "網路連接"
+    IDS_SHAREASHELP             "共享目錄"
+    IDS_STOPSHAREHELP           "停止共享目錄"
+    IDS_VDETAILSHELP            "查看文件的所有詳细資訊"
+    IDS_VNAMEHELP               "僅查看名稱"
+    IDS_BYNAMEHELP              "依名稱排序"
+    IDS_BYTYPEHELP              "依類型排序"
+    IDS_BYSIZEHELP              "依大小排序"
+    IDS_BYDATEHELP              "依日期排序"
+    IDS_NEWWINHELP              "新建窗口"
+    IDS_COPYHELP                "複製文件"
+    IDS_MOVEHELP                "移到文件"
+    IDS_DELHELP                 "刪除文件"
+
+    IDS_DIRNAMELABEL            "目錄名(&D):"
+    IDS_DRIVENOTAVAILABLE       "無法使用網路該位置。"
+
+    IDS_SHAREDAS                "共享為 %s"
+    IDS_NOTSHARED               "未共享"
+
+    IDS_DRIVE_COMPRESSED        " - 已壓縮"
+
+    IDS_DRAG_COPYING            "將文件複製到 %s"
+    IDS_DRAG_MOVING             "將文件移到到 %s"
+    IDS_DRAG_EXECUTING          "用 %s 執行文件"
+
+    IDS_ORDERB                  "%s bytes"
+    IDS_ORDERKB                 "%s KB"
+    IDS_ORDERMB                 "%s MB"
+    IDS_ORDERGB                 "%s GB"
+    IDS_ORDERTB                 "%s TB"
+
+    IDS_VN_COMMENTS             "備注"
+    IDS_VN_COMPANYNAME          "公司名"
+    IDS_VN_FILEDESCRIPTION      "文件說明"
+    IDS_VN_INTERNALNAME         "内部名稱"
+    IDS_VN_LEGALTRADEMARKS      "合法商標"
+    IDS_VN_ORIGINALFILENAME     "原始文件名"
+    IDS_VN_PRIVATEBUILD         "内部版本說明"
+    IDS_VN_PRODUCTNAME          "產品名稱"
+    IDS_VN_PRODUCTVERSION       "產品版本"
+    IDS_VN_SPECIALBUILD         "特殊版本說明"
+
+    IDS_VN_LANGUAGE             "語言"
+    IDS_VN_LANGUAGES            "語言"
+
+    IDS_ASSOCIATE               "瀏覽"
+    IDS_RUN                     "執行"
+    IDS_WINHELPERR              "無法顯示“幫助“資訊。"
+    IDS_NOEXEASSOC              "有副檔名 %s 的文件是程式，無法與另一個應用程式相關聯。"
+    IDS_ASSOCNOTEXE             "%s 不是一個程式，無法與一個文件副檔名相關聯。"
+    IDS_ASSOCNONE               "(無)"
+    IDS_NOFILES                 "未找到文件。"
+    IDS_NOACCESSDIR             "您當前無權訪問該目錄。"
+    IDS_NOACCESSFILE            "您當前無權訪問該文件。"
+
+    IDS_DRIVEBUSY_COPY          "%c: 該位置在使用中，無法訪問。\n文件管理器正在複製硬碟。"
+    IDS_DRIVEBUSY_FORMAT        "%c: 該位置在使用中，無法訪問。\n文件管理器正在格式化硬碟。"
+
+    IDS_COPYMOVENOTCOMPLETED    "操作未全部完成"
+    IDS_DIRREMAINS              "無法完成文件和目錄上所有的操作。"
+
+    IDS_TOOMANYWINDOWS          "目錄窗口過多。\n\n請關閉一或數個窗口，然後重試。"
+    IDS_FMIFSLOADERR            "無法為該操作加載所需的一個函式庫。"
+
+    IDS_NOSUCHDIRTITLE          "無法讀取目錄"
+    IDS_NOSUCHDIR               "目錄不存在。"
+
+    IDS_BADNETNAMETITLE         "無法連接網路該位置"
+    IDS_BADNETNAME              "找不到該網路名稱。"
+
+    IDS_ALLFILES                "“全部確定“會作用到所有文件，包括系統、隱藏和\n唯讀文件。"
+
+    IDS_ASSOC_OPEN              "開啟"
+    IDS_ASSOC_PRINT             "列印"
+
+    IDS_ADDEXTTITLE             "加入副檔名"
+    IDS_ADDEXTTEXT              "“%s“副檔名當前關聯到“%s“。是否替換原有關聯？"
+
+    IDS_EXTTITLE                "文件關聯編輯器"
+
+    IDS_EXTADDERROR             "無法設置副檔名關聯。"
+    IDS_EXTDELERROR             "無法刪除副檔名。"
+    IDS_FILETYPEADDERROR        "無法添加文件類型。"
+    IDS_FILETYPEDELERROR        "無法刪除文件類型。"
+    IDS_FILETYPEREADERROR       "無法讀取文件類型。"
+
+    IDS_FILETYPENULLDESCERROR   "文件類型說明無法為空。請輸入新的文件類型。"
+    IDS_FILETYPEDUPDESCERROR    "無法根据文件類型產生唯一的標識號。請輸入新的文件類型。"
+
+    IDS_FILETYPEDELCONFIRMTITLE "刪除文件類型"
+    IDS_FILETYPEDELCONFIRMTEXT  "如此將刪除文件類型及所有相關的副檔名。是否確定要刪除“%s“？"
+#ifdef ASSOC
+    IDS_FILETYPEDELCONFIRMUSERTEXT "You are deleting a Personal File Type.  It will revert to the Common File Type, and all of its extensions will remain intact.  Are you sure you want to revert '%s'?"
+    IDS_FILETYPEUSERIZETEXT     "You are customizing a Common File Type.  File Manager save your changes in a Personalized File Type.  Continue?"
+#endif
+    IDS_FILETYPECOMMANDNULLTEXT "文件類型操作必需有至少一個命令與其相符。請在命令字段輸入應用程式。"
+
+    IDS_NEWFILETYPETITLE        "新文件類型"
+    IDS_COPYINGDISKTITLE        "正在複製硬碟"
+    IDS_SEARCHING               "正在搜索..."
+
+    IDS_INITUPDATEFAIL          "無法初始化後台更新支持。文件管理器將會關閉。"
+    IDS_INITUPDATEFAILTITLE     "文件管理器初始化"
+
+    IDS_COMPRESSDIR             "要同時壓縮 %s 中所有的文件及子目錄?"
+    IDS_UNCOMPRESSDIR           "要同時解壓縮 %s 中所有的文件及子目錄?"
+    IDS_COMPRESS_ATTRIB_ERR     "文件管理器無法更改 %s 的壓縮屬性。"
+    IDS_NTLDRCOMPRESSERR        "%s 文件將不被壓縮。如果壓縮這個文件，系統可能無法執行。"
+    IDS_MULTICOMPRESSERR        "文件管理器當前正在壓縮或解壓縮文件。/n待操作完成後，才能壓縮/解壓縮其它文件。"
+
+    IDS_EDITFILTER              "程式 (*.exe)\0*.exe\0"
+
+END
+#undef SUGGEST
+
+/* Help strings for the popup menus.
+ */
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    MH_POPUP+IDM_FILE,          "控制文件的命令"
+    MH_POPUP+IDM_DISK,          "控制硬碟的命令"
+    MH_POPUP+IDM_TREE,          "控制目錄窗口的命令"
+    MH_POPUP+IDM_VIEW,          "決定資訊顯示方式的命令"
+    MH_POPUP+IDM_OPTIONS,       "設置選項的命令"
+    MH_POPUP+IDM_SECURITY,      "控制文件和目錄安全的命令"
+    MH_POPUP+IDM_WINDOW,        "安排窗口的命令"
+    MH_POPUP+IDM_HELP,          "顯示“文件管理器幫助”的命令"
+END
+
+
+// Help strings for the "standard" toolbar items.
+
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    MH_MYITEMS+IDM_OPEN,        "開啟所選項目"
+    MH_MYITEMS+IDM_EDIT,        "使用記事本編輯所選項目"
+    MH_MYITEMS+IDM_MOVE,        "移到所選的項目"
+    MH_MYITEMS+IDM_COPY,        "複製文件及目錄"
+    MH_MYITEMS+IDM_COPYTOCLIPBOARD, "複製文件到剪貼簿"
+	MH_MYITEMS+IDM_CUTTOCLIPBOARD, "剪下一個或多個文件到剪貼簿"
+    MH_MYITEMS+IDM_PASTE,		"貼上剪貼簿中的文件到當前目錄"
+    MH_MYITEMS+IDM_COMPRESS,    "壓縮文件或目錄"
+    MH_MYITEMS+IDM_UNCOMPRESS,  "解壓縮文件或目錄"
+    MH_MYITEMS+IDM_DELETE,      "刪除文件及目錄"
+    MH_MYITEMS+IDM_RENAME,      "重新命名文件或目錄"
+    MH_MYITEMS+IDM_ATTRIBS,     "設置文件屬性及顯示屬性"
+    MH_MYITEMS+IDM_UNDELETE,    "檢索先前刪除的文件"
+    MH_MYITEMS+IDM_RUN, "執行或開啟應用程式或文檔"
+    MH_MYITEMS+IDM_PRINT,       "列印文檔"
+    MH_MYITEMS+IDM_ASSOCIATE,   "將文件與應用程式產生關聯"
+    MH_MYITEMS+IDM_MAKEDIR,     "建立目錄"
+    MH_MYITEMS+IDM_SEARCH,      "搜索文件及目錄"
+    MH_MYITEMS+IDM_SELECT,      "選擇及目錄"
+    MH_MYITEMS+IDM_EXIT,        "關閉文件管理器"
+
+    MH_MYITEMS+IDM_DISKCOPY,    "複製軟碟的内容"
+    MH_MYITEMS+IDM_LABEL,       "指定或改變硬碟的代號"
+    MH_MYITEMS+IDM_FORMAT,      "格式化硬碟"
+//    MH_MYITEMS+IDM_SYSDISK,     "Copies MS-DOS files to a floppy disk"
+    MH_MYITEMS+IDM_CONNECT,     "連接到網路該位置"
+    MH_MYITEMS+IDM_DISCONNECT,  "斷開網路該位置"
+//    MH_MYITEMS+IDM_CONNECTIONS,       "Network Connections..."
+//    MH_MYITEMS+IDM_SHARES,    "View Shared Directories..."
+    MH_MYITEMS+IDM_SHAREAS,     "共享一個目錄"
+    MH_MYITEMS+IDM_STOPSHARE,   "停止共享一個目錄"
+
+    MH_MYITEMS+IDM_DRIVESMORE,  "選擇一個不同的該位置"
+
+    MH_MYITEMS+IDM_EXPONE,      "顯示目錄的另一層"
+    MH_MYITEMS+IDM_EXPSUB,      "顯示目錄的所有子目錄"
+    MH_MYITEMS+IDM_EXPALL,      "顯示所有目錄的全部子目錄"
+    MH_MYITEMS+IDM_COLLAPSE,    "折疊所選目錄的全部目錄"
+    MH_MYITEMS+IDM_ADDPLUSES,   "指出有子目錄的目錄"
+
+    MH_MYITEMS+IDM_BOTH,        "顯示目錄樹及當前目錄的内容"
+    MH_MYITEMS+IDM_TREEONLY,    "顯示目錄樹"
+    MH_MYITEMS+IDM_DIRONLY,     "顯示當前目錄的内容"
+    MH_MYITEMS+IDM_SPLIT,       "拆分一個目錄窗口或移到拆分條"
+    MH_MYITEMS+IDM_VNAME,       "只顯示文件名"
+    MH_MYITEMS+IDM_VDETAILS,    "顯示全部文件细節"
+    MH_MYITEMS+IDM_VOTHER,      "顯示部分文件细節"
+    MH_MYITEMS+IDM_BYNAME,      "按名稱排列文件"
+    MH_MYITEMS+IDM_BYTYPE,      "按類型排列文件"
+    MH_MYITEMS+IDM_BYSIZE,      "按大小排列文件"
+    MH_MYITEMS+IDM_BYDATE,      "按日期排列文件"
+    MH_MYITEMS+IDM_BYFDATE,     "按先前日期排列文件"
+    MH_MYITEMS+IDM_VINCLUDE,    "顯示指定類型的文件"
+
+    MH_MYITEMS+IDM_CONFIRM,     "控制確認資訊"
+    MH_MYITEMS+IDM_FONT,        "更改文件管理器的字體"
+
+    MH_MYITEMS+IDM_TOOLBARCUST, "自定義工具欄"
+    MH_MYITEMS+IDM_TOOLBAR,     "顯示或隱藏工具欄"
+    MH_MYITEMS+IDM_DRIVEBAR,    "顯示或隱藏該位置欄"
+    MH_MYITEMS+IDM_STATUSBAR,   "顯示或隱藏狀態欄"
+    MH_MYITEMS+IDM_NEWWINONCONNECT,     "連接時開啟新建的窗口"
+
+    MH_MYITEMS+IDM_MINONRUN,    "執行時將文件管理器缩成一個圖示"
+    MH_MYITEMS + IDM_INDEXONLAUNCH, "在文件管理器執行時為“快速移至目錄“建立索引"
+    MH_MYITEMS+IDM_SAVESETTINGS,        "關閉文件管理器時保存設置"
+
+    MH_MYITEMS+IDM_NEWWINDOW,   "開啟新建窗口"
+    MH_MYITEMS+IDM_CASCADE,     "重疊窗口"
+    MH_MYITEMS+IDM_TILEHORIZONTALLY,    "水平平鋪窗口"
+    MH_MYITEMS+IDM_TILE,        "垂直平鋪窗口"
+    MH_MYITEMS+IDM_ARRANGE,     "排列圖示"
+    MH_MYITEMS+IDM_REFRESH,     "更新窗口的内容"
+
+    MH_MYITEMS+IDM_PERMISSIONS  "查看或設置指定項目的授權資訊"
+    MH_MYITEMS+IDM_AUDITING     "查看或設置指定項目的審核資訊"
+    MH_MYITEMS+IDM_OWNER        "查看或取得指定項目的所有權"
+
+    MH_MYITEMS+IDM_HELPINDEX,   "顯示文件管理器的“幫助”内容"
+    MH_MYITEMS+IDM_HELPKEYS,    "在“文件管理器幫助“里搜索一個主题"
+    MH_MYITEMS+IDM_HELPHELP,    "顯示關於使用“幫助“的資訊"
+    MH_MYITEMS+IDM_ABOUT,       "顯示關於文件管理器的資訊"
+END
+
+
+// Strings for menu items that may be added at init time.
+
+STRINGTABLE MOVEABLE DISCARDABLE
+BEGIN
+    IDS_CONNECT,                "映射網路該位置(&N)..."
+    IDS_DISCONNECT,             "斷開網路該位置(&D)..."
+    IDS_CONNECTIONS,            "網路連接(&N)..."
+    IDS_SHAREDDIR               "共享目錄(&H)..."
+    IDS_SHAREAS,                "共享為(&A)..."
+    IDS_STOPSHARE,              "停止共享(&T)..."
+    IDS_SHARES,                 "查看共享目錄(&H)..."
+    IDS_UNDELETE,               "撤銷刪除(&U)..."
+    IDS_NEWWINONCONNECT,        "在連接時開啟新窗口(&O)"
+END
+
+#include "winfile_zh-TW.dlg"
